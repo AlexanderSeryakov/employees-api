@@ -12,8 +12,8 @@ class EmployeeDTO:
     join_date: datetime
     job_title: str
     gender: str
-    # ToDo: в проде salary это всегда Decimal,
-    #  но у нас дамп из int, поэтому оставлю int
+    # ToDo: в проде salary обычно Decimal,
+    #  возможно стоит оставить int по согласованию с командой/клиентом
     salary: Decimal
     id: str = None
     revision_id: str = None
