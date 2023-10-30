@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "employees-api"
 version = "0.1.0"
-description = "Тестовое задание длв компанию Plarin"
-authors = ["Your Name <you@example.com>"]
+description = "Тестовое задание в компанию Plarin"
+authors = ["Alexander Seryakov seryakov78116@gmail.com"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
