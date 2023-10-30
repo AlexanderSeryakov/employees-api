@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "employees-api"
+version = "0.1.0"
+description = "Тестовое задание длв компанию Plarin"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.104.0"
+uvicorn = "^0.23.2"
+pymongo = "^4.5.0"
+pydantic-settings = "^2.0.3"
+envparse = "^0.2.0"
+motor = "^3.3.1"
+beanie = "^1.23.1"
+
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

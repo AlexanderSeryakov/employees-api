@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  application:
+    restart: always
+    container_name: employees-backend
+    hostname: employees-backend
+    environment:
+      - MONGODB=mongodb://mongodb/releads_fast?readPreference=secondaryPreferred&connectTimeoutMS=4000&maxIdleTimeMS=90000&heartbeatFrequencyMS=12000&w=majority&wTimeoutMS=6000
+      - MONGODB_DBNAME=employees_db
+      - MAX_CONNECTIONS_COUNT=10
+      - MIN_CONNECTIONS_COUNT=3
+    build:
+      context: .
+    command:
+      python3 -m src
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/app
+    networks:
+      - backend
+    depends_on:
+      - mongodb
+
+  mongodb:
+    container_name: employees-mongo
+    hostname: mongodb
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./db_data:/data/db
+      - .:/home
+    networks:
+      - backend
+
+volumes:
+  db_data:
+
+networks:
+  backend:
+    name: employees-network
+    driver: bridge
