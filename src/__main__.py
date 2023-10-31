@@ -1,21 +1,19 @@
 import uvicorn
 from fastapi import FastAPI
+from contextlib import asynccontextmanager
 
 from src import infrastructure
 from src.api import controllers, app_factory
 
 
 def main() -> FastAPI:
-    app = app_factory()
-
-    @app.on_event("startup")
-    async def init_database():
+    @asynccontextmanager
+    async def lifespan(app: FastAPI):
         await infrastructure.init_db()
-
-    @app.on_event("shutdown")
-    async def close_connection():
+        yield
         await infrastructure.close_db()
 
+    app = app_factory(lifespan=lifespan)
     controllers.setup(app)
 
     return app

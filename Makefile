@@ -7,3 +7,5 @@ downserver:
 	${DC} -f ${BACKEND_DEV} down
 connect-mongo:
 	${DC} -f ${BACKEND_DEV} exec mongodb sh
+connect-app:
+	${DC} -f ${BACKEND_DEV} exec application sh
