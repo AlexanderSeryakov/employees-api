@@ -1,7 +1,9 @@
 DC = docker compose
 BACKEND_DEV = docker-compose-dev.yaml
 
-up-server:
+runserver:
 	${DC} -f ${BACKEND_DEV} up --remove-orphans -d --build
-down-server:
+downserver:
 	${DC} -f ${BACKEND_DEV} down
+connect-mongo:
+	${DC} -f ${BACKEND_DEV} exec mongodb sh

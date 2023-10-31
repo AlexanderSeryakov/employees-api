@@ -10,7 +10,7 @@ services:
     environment:
       - MONGODB_URL=mongodb://mongodb:27017
       - TEST_MONGODB_URL=mongodb://mongodb:27017/test_db
-      - DEBUG=True
+      - DEBUG=False
       - MODE=Dev
     build:
       context: .
