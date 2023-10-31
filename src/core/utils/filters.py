@@ -21,7 +21,7 @@ class EmployeesFilterArgs(Paginator):
             company: Annotated[str, Query(max_length=64, description="Фильтр по имени компании")] = None,
             job_title: Annotated[str, Query(max_length=64, description="Фильтр по должности")] = None,
             gender: Annotated[str, Query(
-                description="Фильтр по полу: female | male")
+                description="Фильтр по полу: female | male | other")
             ] = None,
             age: Annotated[int, Query(gt=0, description="Сотрудники, с указанным возрастом и меньше")] = None,
             salary: Annotated[Decimal, Query(
