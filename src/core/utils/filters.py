@@ -45,7 +45,9 @@ class EmployeesFilterArgs(Paginator):
 
     def prepare_filters(self) -> tuple[Any, list[dict]]:
         # ToDo: добавить {"age": {"$gt": current_filter_value}} и аналогично для salary,
-        #  чтобы можно было фильтровать не только кейс, где age/salary меньше указанных, но и наоборот
+        #  чтобы можно было фильтровать не только кейс, где age/salary меньше указанных, но и наоборот.
+        #  Также можно сделать что-то типо Query-билдера и вынести его в отдельную сущность,
+        #  чтобы не писать "сырые" запросы
         choice_filters = []
         order = "name"
         for filter_name in ALL_FILTERS_FIELD:

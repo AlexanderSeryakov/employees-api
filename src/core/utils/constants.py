@@ -1,4 +1,4 @@
-ALL_FILTERS_FIELD = {
+ALL_FILTERS_FIELD = frozenset((
     "name",
     "email",
     "company",
@@ -6,21 +6,21 @@ ALL_FILTERS_FIELD = {
     "gender",
     "age",
     "salary",
-}
+))
 
-STR_MATCHING_FILTERS_FIELD = {
+STR_MATCHING_FILTERS_FIELD = frozenset((
     "name",
     "email",
     "company",
     "job_title",
     "gender",
-}
+))
 
-ORDER_TYPES = {
+ORDER_TYPES = frozenset((
     "name",
     "-name",
     "age",
     "-age",
     "salary",
     "-salary"
-}
+))

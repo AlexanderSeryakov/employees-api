@@ -5,11 +5,13 @@ services:
     restart: always
     container_name: employees-backend
     hostname: employees-backend
+    # Переменные окружения на проде лучше задать
+    # на самом сервере, либо в k8s, если он у нас есть.
     environment:
-      - MONGODB=mongodb://mongodb/releads_fast?readPreference=secondaryPreferred&connectTimeoutMS=4000&maxIdleTimeMS=90000&heartbeatFrequencyMS=12000&w=majority&wTimeoutMS=6000
-      - MONGODB_DBNAME=employees_db
-      - MAX_CONNECTIONS_COUNT=10
-      - MIN_CONNECTIONS_COUNT=3
+      - MONGODB_URL=mongodb://mongodb:27017
+      - TEST_MONGODB_URL=mongodb://mongodb:27017/test_db
+      - DEBUG=True
+      - MODE=Dev
     build:
       context: .
     command:
