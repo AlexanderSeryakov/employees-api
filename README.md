@@ -37,7 +37,7 @@ make downserver
 
 ### Подключение к контейнеру FastAPI приложения:
 ```
-connect-app
+make connect-app
 ```
 
 ### Для работы с API нужно перейти по адресу
