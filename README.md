@@ -72,31 +72,6 @@ curl -X 'GET' \
 
 ---
 
-### Добавление определенных сотрудников для теста:
-
-`POST /api/v1/employees/`
-
-Пример запроса:
-
-```curl
-curl -X 'POST' \
-  'http://127.0.0.1:8000/api/v1/employees' \
-  -H 'accept: application/json' \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "name": "John Doe",
-  "email": "john@gmail.com",
-  "age":23,
-  "company": "Plarin",
-  "join_date": "2023-10-31T16:14:17.798Z",
-  "job_title": "Developer",
-  "gender": "male",
-  "salary": 2200
-}'
-```
-
-----
-
 ### Загрузка данных из json
 
 Если вам необходимо выгрузить данные из json-файла в базу данных приложения, воспользуйтесь следующей
