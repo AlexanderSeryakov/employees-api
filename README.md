@@ -96,5 +96,3 @@ curl -X 'POST' \
    mongoimport --db employees_database --collection employees --file home/{fileName.json} --jsonArray
    ```
    Вы также можете указать нужные вам имя базы данных и коллекции.
-
-### По умолчанию я оставил директорию db_data c предустановленным тестовым дампом сотрудников - но в целом делать так не нужно :)
